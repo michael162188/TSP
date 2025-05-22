@@ -5,11 +5,14 @@
 
 #define CITIES 10
 
-int nearestNeighbor();
+int getDistances(int*);
+
+int nearestNeighbor(int*, int*);
 
 void genPerms();
 
 int main () {
+    int* minDistance;
     int coordinates[20];
     coordinates[0] = 0;
     coordinates[1] = 0;
@@ -22,4 +25,15 @@ int main () {
     for (int i = 0; i < CITIES; i++) {
         printf("City %d: (%d, %d)\n", i, coordinates[i], coordinates[i + 1]);
     }
+
+
+}
+
+int getDistances(int* coordinates) {
+    
+}
+
+int nearestNeighbor(int* coordinates, int* minDistance) {
+    
+    return *minDistance;
 }
