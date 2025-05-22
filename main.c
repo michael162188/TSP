@@ -5,11 +5,7 @@
 
 #define CITIES 10
 
-int getDistances(int*);
-
 int nearestNeighbor(int*, int*);
-
-void genPerms();
 
 int main () {
     int* minDistance;
@@ -27,10 +23,6 @@ int main () {
     }
 
 
-}
-
-int getDistances(int* coordinates) {
-    
 }
 
 int nearestNeighbor(int* coordinates, int* minDistance) {
