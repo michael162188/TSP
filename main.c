@@ -5,11 +5,14 @@
 
 #define CITIES 10
 
-int nearestNeighbor(int*, int*);
+void getDistances(double[CITIES][CITIES], int[CITIES * 2]);
+
+int nearestNeighbor(int[CITIES * 2], int[CITIES]);
 
 int main () {
-    int* minDistance;
-    int coordinates[20];
+    double distances[CITIES][CITIES];
+    int shortestPath[CITIES];
+    int coordinates[CITIES * 2];
     coordinates[0] = 0;
     coordinates[1] = 0;
 
@@ -22,10 +25,26 @@ int main () {
         printf("City %d: (%d, %d)\n", i, coordinates[i], coordinates[i + 1]);
     }
 
+    printf("\n");
 
+    getDistances(distances, coordinates);
+    
+    int minDistance = nearestNeighbor(coordinates, shortestPath);
 }
 
-int nearestNeighbor(int* coordinates, int* minDistance) {
+void getDistances(double distances[CITIES][CITIES], int coordinates[CITIES * 2]) {
+    for (int i = 0; i < CITIES; i++) {
+        for (int j = 0; j <= i; j++) {
+            int x = coordinates[i * 2] - coordinates[j * 2];
+            int y = coordinates[i * 2 + 1] - coordinates[j * 2 + 1];
+            distances[i][j] = sqrt((x * x) + (y * y));
+            distances[j][i] = distances[i][j];
+        }
+    }
+}
+
+int nearestNeighbor(int coordinates[CITIES * 2], int shortestPath[CITIES]) {
+    int distance = 0;
     
-    return *minDistance;
+    return distance;
 }
