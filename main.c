@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #include <time.h>
 #include <math.h>
 
@@ -71,7 +72,7 @@ double nearestNeighbor(City* path, int* shortestPathIndexes) {
 
     for (int i = 0; i < (CITIES - 1); i++) {
         // Initialize minimum distance value as largest possible signed 32-bit integer (2^31 - 1)
-        double minimum = 2147483647;
+        double minimum = INT_MAX;
         for (int j = 0; j < CITIES; j++) {
             // Calculate the distance between two cities at a time
             double x = path[j].position[0] - path[shortestPathIndexes[i]].position[0];
