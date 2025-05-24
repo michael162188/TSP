@@ -63,6 +63,10 @@ double nearestNeighbor(City* path, int* shortestPathIndexes) {
 
     // Initialize all cities in path as not visited except for the first
     int* visited = calloc(CITIES, sizeof(int));
+    if (visited == NULL) {
+        printf("Memory allocation failed\n");
+        exit(EXIT_FAILURE);
+    }
     visited[0] = 1;
 
     for (int i = 0; i < (CITIES - 1); i++) {
